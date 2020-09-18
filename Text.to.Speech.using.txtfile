@@ -1,0 +1,21 @@
+# Text to speech : using text message to speech
+# Import the required module for text , Google text to speech 
+from gtts import gTTS 
+  
+# imported os for play the converted audio 
+import os 
+
+f = open('using.txtfile.txt')  
+x = f.read()
+
+# write the Language in which you want to convert 
+language = 'en'
+  
+# myobj is object of gtts engine and passing the parameter , slow = false is covernting the audio high speed 
+myobj = gTTS(text=x, lang=language, slow=False) 
+  
+# Saving the converted audio into mp3 file named 
+myobj.save("txtfile.wav") 
+  
+# Playing the converted file # you can use also mpg321
+os.system("txtfile.wav") 
